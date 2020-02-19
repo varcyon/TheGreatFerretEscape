@@ -121,6 +121,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &235338853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2486911167589476577, guid: 18da30af4c5bf6348a303a9c8ad3feae,
+    type: 3}
+  m_PrefabInstance: {fileID: 2486911167111588716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &235338854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235338853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417536edf5fe9704b944f99cfa7a43fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &261262882
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,31 +560,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1729609892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Script: {fileID: 11500000, guid: b0b73e109313dff4c945d7c04e1575a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  axes: 0
+  sensitivityHor: 9
+  sensitivityVert: 9
+  minimumVert: -45
+  maximumVert: 45
+  _rotationX: 0
 --- !u!1 &1853056228
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,11 +855,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1129642007839135420, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.218
-      objectReference: {fileID: 0}
     - target: {fileID: 2486911167589476577, guid: 18da30af4c5bf6348a303a9c8ad3feae,
         type: 3}
       propertyPath: m_Name
@@ -866,7 +863,7 @@ PrefabInstance:
     - target: {fileID: 2486911167589476605, guid: 18da30af4c5bf6348a303a9c8ad3feae,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.202
+      value: -3.191
       objectReference: {fileID: 0}
     - target: {fileID: 2486911167589476605, guid: 18da30af4c5bf6348a303a9c8ad3feae,
         type: 3}
@@ -917,56 +914,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191569850091412347, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191569850091412347, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191569850091412347, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191569850091412347, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191569850091412347, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191569850091412347, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-        type: 3}
-      propertyPath: m_FOVAxisMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191569850091412347, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-        type: 3}
-      propertyPath: field of view
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191569850091412347, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-        type: 3}
-      propertyPath: far clip plane
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3191569850091412347, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-        type: 3}
-      propertyPath: m_projectionMatrixMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6901624279015566994, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-        type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18da30af4c5bf6348a303a9c8ad3feae, type: 3}
@@ -1051,6 +998,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Human
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414144962194978320, guid: 14448543ec0f42246a4d860d7ca958e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6414144962194978324, guid: 14448543ec0f42246a4d860d7ca958e3,
         type: 3}
