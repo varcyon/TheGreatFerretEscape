@@ -121,24 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &235338853 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2486911167589476577, guid: 18da30af4c5bf6348a303a9c8ad3feae,
-    type: 3}
-  m_PrefabInstance: {fileID: 2486911167111588716}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &235338854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235338853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 417536edf5fe9704b944f99cfa7a43fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &261262882
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +446,7 @@ GameObject:
   - component: {fileID: 1428338232}
   - component: {fileID: 1428338231}
   - component: {fileID: 1428338230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,12 +545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b73e109313dff4c945d7c04e1575a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axes: 0
-  sensitivityHor: 9
-  sensitivityVert: 9
-  minimumVert: -45
-  maximumVert: 45
-  _rotationX: 0
 --- !u!1 &1853056228
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,12 +844,12 @@ PrefabInstance:
     - target: {fileID: 2486911167589476605, guid: 18da30af4c5bf6348a303a9c8ad3feae,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0.257
       objectReference: {fileID: 0}
     - target: {fileID: 2486911167589476605, guid: 18da30af4c5bf6348a303a9c8ad3feae,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.06
+      value: -7.49
       objectReference: {fileID: 0}
     - target: {fileID: 2486911167589476605, guid: 18da30af4c5bf6348a303a9c8ad3feae,
         type: 3}
