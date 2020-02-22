@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{27ac1bc3-d6a0-0d78-559e-2e05ffb2c2dc}</ProjectGuid>
+    <ProjectGuid>{C31BAC27-A0D6-780D-559E-2E05FFB2C2DC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,13 +56,70 @@
      <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
      <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
+     <Compile Include="Assets\Scripts\Manager.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\Network\PhotonConnection.cs" />
+     <Compile Include="Assets\Scripts\Network\PlayFabControl.cs" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\Photon\PhotonLibs\changes-library.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\Photon\PhotonUnityNetworking\readme.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+ <Reference Include="Unity.Timeline.Editor">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.VSCode.Editor">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro.Editor">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.CollabProxy.Editor">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Rider.Editor">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>F:/Unity Projects/TheGreatFerretEscape/The Great Ferret Escape/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine">
  <HintPath>F:/2019.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -599,93 +656,61 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{b294ce3d-4bc0-e8d0-4118-5a7abf4d62c7}</Project>
-      <Name>Unity.Timeline.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Cinemachine.csproj">
-      <Project>{6fe97fc5-d882-1ebc-e19d-b4bd986c0471}</Project>
-      <Name>Cinemachine</Name>
-    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
-      <Project>{62dc829c-ab7a-d78e-3668-9230d50407e6}</Project>
+      <Project>{7B04148E-45D5-2DFC-3442-1580B35EB9F0}</Project>
       <Name>PhotonUnityNetworking.Utilities.PhotonPlayer.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PunDemos.DemoHubEditor.csproj">
-      <Project>{aea1f7d2-ef3f-160d-abdb-290ce0f7a7e9}</Project>
+      <Project>{31E68D16-2E78-510E-F653-177D567B49E4}</Project>
       <Name>PunDemos.DemoHubEditor</Name>
     </ProjectReference>
     <ProjectReference Include="PunDemos.DemoSlotcarEditor.csproj">
-      <Project>{606dd8af-aa16-d540-9cbc-82a96c9b5eac}</Project>
+      <Project>{BF2200CA-1D4A-0681-3C7B-F0907287B846}</Project>
       <Name>PunDemos.DemoSlotcarEditor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{2a133704-af8e-bd17-6af6-fe9f722df53f}</Project>
-      <Name>Unity.VSCode.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
-      <Project>{7167b31f-f937-1ecd-e82a-5fd0578ccac6}</Project>
+      <Project>{E35C2E28-6300-0EFF-B513-2905C8845C47}</Project>
       <Name>PhotonUnityNetworking.Demos</Name>
     </ProjectReference>
+    <ProjectReference Include="PlayFab.csproj">
+      <Project>{2CBE0819-0BC0-7A3F-875D-9DDB5E1B8639}</Project>
+      <Name>PlayFab</Name>
+    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.csproj">
-      <Project>{196df056-2b15-56e5-8bb8-b1abe0f13f9a}</Project>
+      <Project>{47C6010B-3979-6ED5-88D5-DD7B0C8EDAFE}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{cd6745eb-d21e-77f9-2bd8-c4e95d914bc5}</Project>
-      <Name>Unity.TextMeshPro.Editor</Name>
+    <ProjectReference Include="PlayFabEditorExtensions.csproj">
+      <Project>{82730614-DAE6-6DB2-64C7-B825CAC478D0}</Project>
+      <Name>PlayFabEditorExtensions</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{1771eb73-38f9-dbfb-8c3d-a3a80c866ba8}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{ae9d157f-0040-08ac-fc18-f19b87a34abd}</Project>
-      <Name>Unity.Timeline</Name>
+    <ProjectReference Include="PlayFabSDKEditor.csproj">
+      <Project>{48FEA92E-AADD-F011-2100-238AD5B10784}</Project>
+      <Name>PlayFabSDKEditor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonWebSocket.csproj">
-      <Project>{2b1465dc-9ea5-525f-fe8e-9615ce4e324e}</Project>
+      <Project>{F9FAFD0C-40BA-7930-4DE4-015670DFE850}</Project>
       <Name>PhotonWebSocket</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.CollabProxy.Editor.csproj">
-      <Project>{5fd2cfcb-0e01-7796-062a-caa2cb52bcec}</Project>
-      <Name>Unity.CollabProxy.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="PhotonRealtime.csproj">
-      <Project>{d03c5bb8-197a-d90c-fc3f-9332451a12d5}</Project>
+      <Project>{8227C23B-50B4-DA75-9CBF-AE6C1A677B8C}</Project>
       <Name>PhotonRealtime</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{35f99099-31ad-5142-ae0a-533fed1481b0}</Project>
-      <Name>Unity.Rider.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.csproj">
-      <Project>{cd217029-3759-9011-6b45-7e4d457f906a}</Project>
+      <Project>{C73AC6BE-FA17-009F-FCB4-741D1C3FF120}</Project>
       <Name>PhotonUnityNetworking</Name>
     </ProjectReference>
-    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
-      <Project>{cfcee2a1-21e3-f43f-0553-f198ca2f67e6}</Project>
-      <Name>com.unity.cinemachine.editor</Name>
-    </ProjectReference>
     <ProjectReference Include="PhotonChat.csproj">
-      <Project>{d42d71f6-13be-7172-3b4c-6fe31d041da6}</Project>
+      <Project>{4E3B0592-CDCB-A36F-DCD8-26E90F3189E5}</Project>
       <Name>PhotonChat</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{5281660e-e027-282f-c3a9-f26e76b68ea1}</Project>
-      <Name>Unity.TextMeshPro</Name>
-    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
-      <Project>{71fed9b1-69a8-240e-2938-69b01982519c}</Project>
+      <Project>{38CC7EAA-EFCA-72D9-0DF9-C5D5ABE9AD69}</Project>
       <Name>PhotonUnityNetworking.Utilities.Culling.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
-      <Project>{ac868c0f-97af-41e4-fe29-8bb7ab7fa1fd}</Project>
+      <Project>{E3AEC9E5-8911-089A-79A3-56602C4CFC04}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{a5634577-092e-245d-0a4e-8fa76738de10}</Project>
-      <Name>UnityEditor.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayFab", "PlayFab.csproj", "{C5C83B1D-2833-4D51-3325-C0B72F706BD0}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Demos", "PhotonUnityNetworking.Demos.csproj", "{1FB36771-37F9-CD1E-E82A-5FD0578CCAC6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Utilities", "PhotonUnityNetworking.Utilities.csproj", "{56F06D19-152B-E556-8BB8-B1ABE0F13F9A}"
@@ -15,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonRealtime", "PhotonRea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonWebSocket", "PhotonWebSocket.csproj", "{DC65142B-A59E-5F52-FE8E-9615CE4E324E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayFabEditorExtensions", "PlayFabEditorExtensions.csproj", "{C34C46B4-BCC3-AA4D-15BA-997627FE8EF0}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Editor", "PhotonUnityNetworking.Editor.csproj", "{0F8C86AC-AF97-E441-FE29-8BB7AB7FA1FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PunDemos.DemoHubEditor", "PunDemos.DemoHubEditor.csproj", "{D2F7A1AE-3FEF-0D16-ABDB-290CE0F7A7E9}"
@@ -25,12 +29,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Utili
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PunDemos.DemoSlotcarEditor", "PunDemos.DemoSlotcarEditor.csproj", "{AFD86D60-16AA-40D5-9CBC-82A96C9B5EAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayFabSDKEditor", "PlayFabSDKEditor.csproj", "{FD3C0849-FAC3-A10B-A952-57F1F980A699}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5C83B1D-2833-4D51-3325-C0B72F706BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C83B1D-2833-4D51-3325-C0B72F706BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C83B1D-2833-4D51-3325-C0B72F706BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C83B1D-2833-4D51-3325-C0B72F706BD0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1FB36771-37F9-CD1E-E82A-5FD0578CCAC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1FB36771-37F9-CD1E-E82A-5FD0578CCAC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FB36771-37F9-CD1E-E82A-5FD0578CCAC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +69,10 @@ Global
 		{DC65142B-A59E-5F52-FE8E-9615CE4E324E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC65142B-A59E-5F52-FE8E-9615CE4E324E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC65142B-A59E-5F52-FE8E-9615CE4E324E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C34C46B4-BCC3-AA4D-15BA-997627FE8EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34C46B4-BCC3-AA4D-15BA-997627FE8EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34C46B4-BCC3-AA4D-15BA-997627FE8EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34C46B4-BCC3-AA4D-15BA-997627FE8EF0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0F8C86AC-AF97-E441-FE29-8BB7AB7FA1FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F8C86AC-AF97-E441-FE29-8BB7AB7FA1FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F8C86AC-AF97-E441-FE29-8BB7AB7FA1FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -79,6 +93,10 @@ Global
 		{AFD86D60-16AA-40D5-9CBC-82A96C9B5EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFD86D60-16AA-40D5-9CBC-82A96C9B5EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFD86D60-16AA-40D5-9CBC-82A96C9B5EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD3C0849-FAC3-A10B-A952-57F1F980A699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD3C0849-FAC3-A10B-A952-57F1F980A699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD3C0849-FAC3-A10B-A952-57F1F980A699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD3C0849-FAC3-A10B-A952-57F1F980A699}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
