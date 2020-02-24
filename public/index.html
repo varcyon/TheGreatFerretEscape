@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Include JQuery - dependency of Twitch JS SDK -->
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <!-- Include Twitch SDK -->
+    <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+    <!-- Include PlayFab SDK -->
+    <script src="https://download.playfab.com/PlayFabClientApi.js"></script>
+</head>
+<body>
+    <p>Twitch Auth Example</p>
+    <button onclick="login()">Login With Twitch</button>
+    <script>
+        // Establish Twitch Auth Callback (invoked when logged in with Twitch)
+        Twitch.events.addListener('auth.login', function() {
+            logLine("Logged in with Twitch!");
+            // Invoke login with PlayFab code and pass the token
+            loginWithPlayFab(Twitch.getToken());
+        });
+
+        // Run Twitch SDK initialization
+        Twitch.init({clientId: 'z1gvb3wurnb4gk6qwbp0yeld8nw1jx'}, function(error, status) {
+            logLine("Twitch SDK Initialized");
+        });
+
+        // This method is invoked when you press the button
+
+        function login() {
+            logLine("Logging in via Twitch...");
+            Twitch.login({
+                scope: ['user_read', 'channel_read']
+            });
+        }
+
+        function loginWithPlayFab(accessToken){
+            logLine("Logging in via PlayFab...");
+
+            // When given accessToken, make call to LoginWithTwitch API Call
+            // Make sure to use your own PlayFab Title ID
+            PlayFabClientSDK.LoginWithTwitch({
+                AccessToken: accessToken,
+                TitleId: "FE2DE",
+                CreateAccount: true
+            }, onPlayFabResponse);
+        }
+
+        // Handles response from playfab.
+        function onPlayFabResponse(response, error) {
+            if (response)
+                logLine("Response: " + JSON.stringify(response));
+            if (error)
+                logLine("Error: " + JSON.stringify(error));
+        }
+
+        function logLine(message) {
+        console.log(message);
+            var textnode = document.createTextNode(message);
+            document.body.appendChild(textnode);
+            var br = document.createElement("br");
+            document.body.appendChild(br);
+        }
+    </script>
+</body>
+</html>

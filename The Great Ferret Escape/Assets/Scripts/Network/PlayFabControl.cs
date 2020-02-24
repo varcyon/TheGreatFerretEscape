@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using PlayFab;
 using PlayFab.ClientModels;
+using SimpleJSON;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 namespace com.VarcyonSariouGames.TheGreatFerretEscape {
@@ -18,6 +21,7 @@ namespace com.VarcyonSariouGames.TheGreatFerretEscape {
         public TextMeshProUGUI message;
         public TextMeshProUGUI registerButton;
         LoginWithPlayFabRequest loginWithPlayFabRequest;
+        string twitchAccessToken;
         public bool isAuthenticated = false;
         public GameObject loginUI;
         private void OnEnable () {
@@ -76,6 +80,7 @@ namespace com.VarcyonSariouGames.TheGreatFerretEscape {
 
             });
         }
+
         ////////////////////////////////////////////////
         //TODO: Steam Login when partner, need APP ID//
         // 100 dollar fee
