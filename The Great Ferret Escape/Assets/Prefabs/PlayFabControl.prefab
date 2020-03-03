@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7415480151190318127}
   - component: {fileID: 4986314266455421200}
+  - component: {fileID: 8191188641806105885}
   m_Layer: 0
   m_Name: PlayFabControl
   m_TagString: Untagged
@@ -44,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   username: {fileID: 0}
+  displayName: {fileID: 0}
+  displayNameGO: {fileID: 0}
   password: {fileID: 0}
   email: {fileID: 0}
   emailGO: {fileID: 0}
@@ -51,3 +54,15 @@ MonoBehaviour:
   registerButton: {fileID: 0}
   isAuthenticated: 0
   loginUI: {fileID: 0}
+--- !u!114 &8191188641806105885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7415480151190318126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181a91c38e5710e409adb395752e7b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

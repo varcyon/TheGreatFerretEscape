@@ -8,18 +8,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-
 namespace com.VarcyonSariouGames.TheGreatFerretEscape {
     public class PlayFabControl : MonoBehaviour {
         public static PlayFabControl PFC;
-        public TextMeshProUGUI username;
-        public TextMeshProUGUI displayName;
-        public GameObject displayNameGO;
-        public TextMeshProUGUI password;
-        public TextMeshProUGUI email;
-        public GameObject emailGO;
+        public TMP_InputField username;
+        public TMP_InputField displayName;
+        public TMP_InputField password;
+        public TMP_InputField email;
         public TextMeshProUGUI message;
         public TextMeshProUGUI registerButton;
+        public GameObject emailGO;
+        public GameObject displayNameGO;
         LoginWithPlayFabRequest loginWithPlayFabRequest;
         string twitchAccessToken;
         public bool isAuthenticated = false;
@@ -45,13 +44,22 @@ namespace com.VarcyonSariouGames.TheGreatFerretEscape {
 
         #region Login
         public void LoginPF () {
-            loginWithPlayFabRequest = new LoginWithPlayFabRequest ();
-            loginWithPlayFabRequest.Username = username.text;
-            loginWithPlayFabRequest.Password = password.text;
-            PlayFabClientAPI.LoginWithPlayFab (loginWithPlayFabRequest, result => {
+            PlayFabClientAPI.LoginWithPlayFab (new LoginWithPlayFabRequest () {
+                Username = username.text,
+                    Password = password.text,
+                    InfoRequestParameters = new GetPlayerCombinedInfoRequestParams () {
+                        GetPlayerProfile = true,
+                        GetPlayerStatistics = true,
+                        GetCharacterList = true,
+                        GetCharacterInventories = true,
+                        GetUserData = true
+                    }
+            }, result => {
+                
                 isAuthenticated = true;
                 message.text = "Wecome " + username.text + "!";
-                StartCoroutine (waitAfterLogin ());
+                HideLogin ();
+                MPData.MPD.displayName = result.InfoResultPayload.PlayerProfile.DisplayName;
             }, error => {
                 isAuthenticated = false;
                 if (error.ErrorMessage == "User not found") {
@@ -66,16 +74,17 @@ namespace com.VarcyonSariouGames.TheGreatFerretEscape {
 
         public void RegisterPF () {
             RegisterPlayFabUserRequest request = new RegisterPlayFabUserRequest ();
+            request.DisplayName = displayName.text;
             request.Email = email.text;
             request.Username = username.text;
             request.Password = password.text;
             PlayFabClientAPI.RegisterPlayFabUser (request, result => {
-                PlayFabClientAPI.UpdateUserTitleDisplayName (new UpdateUserTitleDisplayNameRequest { DisplayName = displayName.text }, OnUpdateDisplayNameSuccess, OnError);
                 message.text = "Your account has been created![Loging in..]";
                 StartCoroutine (waitToLogin ());
             }, error => {
-                message.text = "Please enter your email address.";
+                message.text = "Please enter your email address and display name.";
                 emailGO.SetActive (true);
+                displayNameGO.SetActive (true);
                 registerButton.text = "Continue";
 
             });
@@ -90,20 +99,26 @@ namespace com.VarcyonSariouGames.TheGreatFerretEscape {
         //TODO: Google Login when partner, need APP ID//
         //25 dollar developer fee
         ///////////////////////////////////////////////
-        void OnUpdateDisplayNameSuccess (UpdateUserTitleDisplayNameResult result) {
-            Debug.Log (result.DisplayName + " is your new display name.");
+
+        //// Retrieve Players Profile/////
+        public void GetPlayerProfile (string playFabId) {
+            PlayFabClientAPI.GetPlayerProfile (new GetPlayerProfileRequest () {
+                    PlayFabId = playFabId,
+                        // ProfileConstraints = new PlayerProfileViewConstraints () {
+                        //     ShowDisplayName = true
+                        // }
+                },
+                result => Debug.Log (result.PlayerProfile.Statistics),
+                error => Debug.LogError (error.GenerateErrorReport ()));
         }
 
         void OnError (PlayFabError error) {
             Debug.Log (error.GenerateErrorReport ());
         }
         IEnumerator waitToLogin () {
+            Debug.Log ("logging in..");
             yield return new WaitForSeconds (2f);
             LoginPF ();
-        }
-        IEnumerator waitAfterLogin () {
-            yield return new WaitForSeconds (2f);
-            HideLogin ();
         }
 
         #endregion Login
